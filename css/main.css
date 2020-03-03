@@ -21,3 +21,53 @@ ul {
     background-color: #333;
     color: white;
 }
+
+/* GRID LAYOUT */
+.boxes {
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    grid-gap: .5rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 40em) {
+    .boxes {
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 2px;
+    }
+
+    .boxes li:nth-child(1) {
+        grid-column: 1 / -1;
+        grid-row: span 3;
+    }
+
+    .boxes li:nth-child(2) {
+        grid-column: span 2;
+        grid-row: span 7;
+    }
+
+    .boxes li:nth-child(3) {
+        grid-column: span 4;
+        grid-row: span 3;
+    }
+
+    .boxes li:nth-child(4) {
+        grid-column: span 2;
+        grid-row: span 4;
+    }
+
+    .boxes li:nth-child(5),
+    .boxes li:nth-child(6) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+/* STYLE */
+.boxes li {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(../assets/img/wilhelm-gunkel-LpQs_3t4Dck-unsplash.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+}
